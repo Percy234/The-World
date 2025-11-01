@@ -1,10 +1,11 @@
-import animalRouter from "./animal.route.js";
-
+import animalRouter     from "./animal.route.js";
+import kingdomRouter    from "./kingdom.route.js";
 //xử lý lỗi chung
 import { notFound, handleError } from "./error.js";
 
 const router = (App) => {
     App.use('/animals', animalRouter)
+    App.use('/kingdoms', kingdomRouter)
 
 
     // ========== HANDLE ERROR ========== //
