@@ -13,16 +13,17 @@ console.log(urlConnect);
 const connect = async () => {
     try {
         const check = await mongoose.connect(urlConnect, {
-
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
         });
         if(check) {
-            console.log('connected');
+            console.log('> Kết nối database thành công');
         } else {
-            console.log("lỗi");
+            console.log("> Kết nối database thất bại");
         }
     } catch (error) {
         if(error) {
-            console.log('lỗi rồi cu');
+            console.log('> Lỗi kết nối database: ', error.message);
             
         }
     }
