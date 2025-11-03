@@ -1,5 +1,6 @@
 import animalRouter     from "./animal.route.js";
 import kingdomRouter    from "./kingdom.route.js";
+import uploadRouter     from "./upload.js";
 //xử lý lỗi chung
 import { notFound, handleError } from "./error.js";
 
@@ -7,6 +8,8 @@ const router = (App) => {
     App.use('/animals', animalRouter)
     App.use('/kingdoms', kingdomRouter)
 
+    
+    App.use('/uploads', uploadRouter)
 
     // ========== HANDLE ERROR ========== //
     //lỗi không tìm thấy API
