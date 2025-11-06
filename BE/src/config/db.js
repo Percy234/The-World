@@ -8,21 +8,19 @@ dotenv.config();
 //========== VARIABLES ========//
 const urlConnect = process.env.DB_CONNECT_STRING
 console.log(urlConnect);
+console.log(urlConnect);
 
 //========== METHOD ===========//
 const connect = async () => {
     try {
-        const check = await mongoose.connect(urlConnect, {
-
+        await mongoose.connect(urlConnect, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
         });
-        if(check) {
-            console.log('connected');
-        } else {
-            console.log("lỗi");
-        }
+        console.log('> Kết nối database thành công!');
     } catch (error) {
         if(error) {
-            console.log('lỗi rồi cu');
+            console.log('> Lỗi kết nối database: ', error.message);
             
         }
     }
